@@ -5,7 +5,7 @@ Prot2d is a tool for 2D protein visualization aimed at improving the comparabili
 
 ## Getting Started
 
-prot2d runs on python 3.10
+prot2d needs python version: python= ">=3.10,<3.13"
 
 # Download prot2d via pip or poetry
 - pip: 

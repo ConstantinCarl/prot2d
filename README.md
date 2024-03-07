@@ -5,18 +5,18 @@ Prot2d is a tool for 2D protein visualization aimed at improving the comparabili
 
 prot2d runs on python 3.10
 
-# download prot2d via pip or poetry
-pip: 
+# Download prot2d via pip or poetry
+- pip: 
 ```shell
 pip install prot2d
 ```
-Poetry: 
+- Poetry: 
 ```shell
 poetry add prot2d
 ```
 
 # Install Foldseek 
-[foldseek GitHub](https://github.com/steineggerlab/foldseek)
+- [foldseek GitHub](https://github.com/steineggerlab/foldseek)
 
 --> prot2d needs the path to the foldseek executable passed as argument to the main function to be used by the program.
 

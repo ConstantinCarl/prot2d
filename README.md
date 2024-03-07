@@ -38,5 +38,13 @@ This project uses datasets that can be found on Zenodo. Additional example files
 - [Zenodo Data](https://doi.org/10.5281/zenodo.10674045)
 
 
+## Example visualizations
+
+# 1kt1 - domain visualization (family vis)
+<img width="1351" alt="image" src="https://github.com/ConstantinCarl/prot2d/assets/156075124/1f8ac748-09d1-464c-9e42-c6fd93bfeddc">
+
+# 1kt1 - full protine visualization
+<img width="540" alt="image" src="https://github.com/ConstantinCarl/prot2d/assets/156075124/854a89a7-e91c-4ec5-b81d-d33b4f1b96ec">
+
 
 

@@ -3,7 +3,16 @@ Prot2d is a tool for 2D protein visualization aimed at improving the comparabili
 
 ## Getting Started
 
-Instructions on setting up your project locally. To get a copy of the project up and running on your local machine for development and testing purposes.
+prot2d runs on python 3.10
+
+#download prot2d via pip or poetry
+pip: ...
+poetry: ...
+
+#Install Foldseek 
+[foldseek GitHub](https://github.com/steineggerlab/foldseek)
+
+--> prot2d needs the path to the foldseek executable passed as argument to the main function to be used by the program.
 
 ## First experiences with Google Colab
 
@@ -15,7 +24,7 @@ Make sure to follow the instructions in the notebook for the best experience.
 
 ## Data
 
-This project uses datasets hosted on Zenodo. Additional example files can be found here. You can access and download the data using the following link or DOI:
+This project uses datasets that can be found on Zenodo. Additional example files can be found here aswell. You can access and download the data using the following link or DOI:
 
 - [Zenodo Data](https://doi.org/10.5281/zenodo.10674045)
 

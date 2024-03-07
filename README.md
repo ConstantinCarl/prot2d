@@ -1,4 +1,6 @@
 # prot2d
+<img width="910" alt="image" src="https://github.com/ConstantinCarl/prot2d/assets/156075124/34d415d3-55be-4784-a96d-035e40fc5afe">
+
 Prot2d is a tool for 2D protein visualization aimed at improving the comparability of protein structures through standardized 2D visualizations. Prot2d focuses on creating highly comparable representations for same-family proteins.
 
 ## Getting Started

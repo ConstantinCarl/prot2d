@@ -9,7 +9,7 @@ Instructions on setting up your project locally. To get a copy of the project up
 
 For users to get to know prot2d we've prepared a Google Colab notebook. This allows you to execute different prot2d's functionality on example structure and see the results without needing to set up the project locally.
 
-- [Google Colab](YOUR_COLAB_LINK_HERE)
+- [Google Colab](https://colab.research.google.com/drive/17u0twE81kYYspNFsdXUHrCyP33hj0dO6?usp=sharing)
 
 Make sure to follow the instructions in the notebook for the best experience.
 

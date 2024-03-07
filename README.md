@@ -16,6 +16,7 @@ poetry add prot2d
 ```
 
 # Install Foldseek 
+Instructions for downloading the Foldseek software can be found in Foldseek's GitHub
 - [Foldseek GitHub](https://github.com/steineggerlab/foldseek)
 
 --> prot2d needs the path to the foldseek executable passed as argument to the main function to be used by the program.

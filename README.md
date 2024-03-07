@@ -17,7 +17,7 @@ Make sure to follow the instructions in the notebook for the best experience.
 
 This project uses datasets hosted on Zenodo. Additional example files can be found here. You can access and download the data using the following link or DOI:
 
-- [Zenodo Data](YOUR_ZENODO_LINK_OR_DOI_HERE)
+- [Zenodo Data](https://doi.org/10.5281/zenodo.10674045)
 
 
 

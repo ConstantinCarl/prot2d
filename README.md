@@ -10,7 +10,7 @@ pip:
 ```shell
 pip install prot2d
 ```
-poetry: ...
+Poetry: 
 ```shell
 poetry add prot2d
 ```

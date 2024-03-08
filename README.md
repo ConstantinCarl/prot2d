@@ -31,6 +31,11 @@ For users to get to know prot2d we've prepared a Google Colab notebook. This all
 
 Make sure to follow the instructions in the notebook for the best experience.
 
+## Documentation
+
+Prot2d's documentation can found here:
+- [prot2d documentation!](https://constantincarl.github.io/prot2d/)
+
 ## Data
 
 This project uses datasets that can be found on Zenodo. Additional example files can be found here aswell. You can access and download the data using the following link or DOI:

@@ -34,7 +34,7 @@ Instructions for downloading dssp can be found here:
 
 
 
-## First experiences with Google Colab
+# First experiences with Google Colab
 
 For users to get to know prot2d we've prepared a Google Colab notebook. This allows you to execute different prot2d's functionality on example structure and see the results without needing to set up the project locally.
 
@@ -43,7 +43,7 @@ For users to get to know prot2d we've prepared a Google Colab notebook. This all
 Instructions in the Colab help with the first hands-on.
 
 
-## Documentation
+# Documentation
 
 Prot2d's documentation can found here:
 - [prot2d documentation!](https://constantincarl.github.io/prot2d/)
@@ -51,19 +51,19 @@ Prot2d's documentation can found here:
 **important notes:**
 - input PDB files need a header to work (important for predicted structures)
 
-## Data
+# Data
 
 This project uses datasets that can be found on Zenodo. Additional example files can be found here aswell. You can access and download the data using the following link or DOI:
 
 - [Zenodo Data](https://doi.org/10.5281/zenodo.10674045)
 
 
-## Example visualizations
+# Example visualizations
 
-# 1kt1 - domain visualization (family vis)
+## 1kt1 - domain visualization (family vis)
 <img width="1351" alt="image" src="https://github.com/ConstantinCarl/prot2d/assets/156075124/1f8ac748-09d1-464c-9e42-c6fd93bfeddc">
 
-# 1kt1 - full protine visualization
+## 1kt1 - full protine visualization
 <img width="540" alt="image" src="https://github.com/ConstantinCarl/prot2d/assets/156075124/854a89a7-e91c-4ec5-b81d-d33b4f1b96ec">
 
 

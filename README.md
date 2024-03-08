@@ -32,7 +32,7 @@ Instructions for downloading dssp can be found here:
 
 !The program runs on the mkdssp version 4.4.0! (some sources dont provide that (brew does!))
 
-
+*An example download workflow for usage can also be found in the google colab*
 
 # First experiences with Google Colab
 

@@ -41,6 +41,8 @@ Instructions in the Colab help with the first hands-on.
 Prot2d's documentation can found here:
 - [prot2d documentation!](https://constantincarl.github.io/prot2d/)
 
+**important notes:**
+- input PDB files need a header to work (important for predicted structures)
 
 ## Data
 

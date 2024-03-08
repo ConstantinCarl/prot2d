@@ -26,6 +26,13 @@ Instructions for downloading the Foldseek software can be found in Foldseek's Gi
 
 --> prot2d needs the path to the foldseek executable passed as argument to the main function to be used by the program.
 
+# Install dssp
+Instructions for downloading dssp can be found here:
+- [dssp instructions](http://biskit.pasteur.fr/install/applications/dssp)
+
+!The program runs on the mkdssp version 4.4.0! (some sources dont provide that (brew does!))
+
+
 
 ## First experiences with Google Colab
 

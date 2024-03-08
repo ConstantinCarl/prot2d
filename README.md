@@ -4,12 +4,12 @@
 Prot2d is a tool for 2D protein visualization aimed at improving the comparability of protein structures through standardized 2D visualizations. Prot2d focuses on creating highly comparable representations for same-family proteins.
 
 
-## Getting Started
+# Getting Started
 
 prot2d needs python version: python= ">=3.10,<3.13"
 
 
-# Download prot2d via pip or poetry
+## Download prot2d via pip or poetry
 - pip: 
 ```shell
 pip install prot2d
@@ -20,13 +20,13 @@ poetry add prot2d
 ```
 
 
-# Install Foldseek 
+## Install Foldseek 
 Instructions for downloading the Foldseek software can be found in Foldseek's GitHub
 - [Foldseek GitHub](https://github.com/steineggerlab/foldseek)
 
 --> prot2d needs the path to the foldseek executable passed as argument to the main function to be used by the program.
 
-# Install dssp
+## Install dssp
 Instructions for downloading dssp can be found here:
 - [dssp instructions](http://biskit.pasteur.fr/install/applications/dssp)
 

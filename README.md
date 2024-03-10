@@ -50,6 +50,7 @@ Prot2d's documentation can found here:
 
 **important notes:**
 - input PDB files need a header to work (important for predicted structures)
+- prot2d's methods can also be used via command line commands (cli)
 
 # Data
 

@@ -69,3 +69,15 @@ This project uses datasets that can be found on Zenodo. Additional example files
 
 
 
+
+
+
+
+
+
+# Domain Annotation File Format:
+
+The domain annotation is needed in the following format to be procceced by prot2d (methods for converting chainsaw annotations are included in the package documentation)
+
+![image](https://github.com/ConstantinCarl/prot2d/assets/156075124/fefdb121-1ff4-466a-89c3-d4ae63aa1f62)
+

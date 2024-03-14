@@ -67,6 +67,10 @@ This project uses datasets that can be found on Zenodo. Additional example files
 
 # Example visualizations
 
+## 3FTx: None|Anca_10|Anolis_carolinensis
+<img width="409" alt="image" src="https://github.com/ConstantinCarl/prot2d/assets/156075124/f05af945-9fb8-44f1-9891-e1b324778aae">
+
+
 ## 1kt1 - domain visualization (family vis)
 <img width="1351" alt="image" src="https://github.com/ConstantinCarl/prot2d/assets/156075124/1f8ac748-09d1-464c-9e42-c6fd93bfeddc">
 

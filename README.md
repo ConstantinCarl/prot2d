@@ -86,10 +86,10 @@ This project uses datasets that can be found on Zenodo. Additional example files
 
 
 ## 1kt1 - domain visualization (family vis)
-<img width="1351" alt="image" src="https://github.com/ConstantinCarl/prot2d/assets/156075124/1f8ac748-09d1-464c-9e42-c6fd93bfeddc">
+<img width="1000" alt="image" src="https://github.com/ConstantinCarl/prot2d/assets/156075124/1f8ac748-09d1-464c-9e42-c6fd93bfeddc">
 
 ## 1kt1 - full protine visualization
-<img width="540" alt="image" src="https://github.com/ConstantinCarl/prot2d/assets/156075124/854a89a7-e91c-4ec5-b81d-d33b4f1b96ec">
+<img width="450" alt="image" src="https://github.com/ConstantinCarl/prot2d/assets/156075124/854a89a7-e91c-4ec5-b81d-d33b4f1b96ec">
 
 
 # Domain Annotation File Format:
@@ -99,7 +99,7 @@ The domain annotation is needed in the following format to be procceced by prot2
 ![image](https://github.com/ConstantinCarl/prot2d/assets/156075124/54dd63d9-933f-4358-8eae-8aa838008de5)
 
 # Runtime for protein sizes
-<img width="427" alt="image" src="https://github.com/ConstantinCarl/prot2d/assets/156075124/ff033992-3339-43ab-a7d4-dd71a26dddc4">
+<img width="750" alt="image" src="https://github.com/ConstantinCarl/prot2d/assets/156075124/ff033992-3339-43ab-a7d4-dd71a26dddc4">
 <br>
 The runtimes are measured on a local lightweight device.<br>
 

@@ -96,7 +96,7 @@ def format_domain_annotation_file_chainsaw_discSplit(chainsaw_annotation_tsv, ou
         chain_id_index = header.index("chain_id")
         chopping_index = header.index("chopping")
         
-        # Extract chain ID (assuming it's the same for all rows)
+        #Extract chain ID (assuming it's the same for all rows)
         chain_id = None
         for row in tsv_reader:
             if row[chopping_index] == "NULL":
@@ -107,7 +107,7 @@ def format_domain_annotation_file_chainsaw_discSplit(chainsaw_annotation_tsv, ou
             string_domains = row[chopping_index].split(',')
             string_domains = sorted(string_domains, key=lambda x: int(x.split('-')[0]))
 
-        # Read in finished, do TSV writing in the correct format
+        #Read in finished, do TSV writing in the correct format
         directory, file_name = os.path.split(chainsaw_annotation_tsv)
         new_file_name = file_name.replace('.tsv', '_prot2DFormattedDomains.tsv')   
         domain_annotation_formatted_file = os.path.join(output_dir, new_file_name)
@@ -141,40 +141,30 @@ def add_header_to_predicted_pdb(pdb_file):
 
     # Check if the header already exists
     if not pdb_content.startswith("HEADER"):
-        # Header does not exist, add it
+        #Header does not exist, add it
         updated_pdb_content = f"HEADER    {header_line}\n{pdb_content}"
-
         with open(pdb_file, 'w') as output_file:
-            # Write the updated content back to the file
             output_file.write(updated_pdb_content)
         
-        return output_file, True  # Indicate that the header was added
+        return output_file, True  #header was added
     else:
-        # Header already exists
-        return pdb_file, False  # Indicate that the header was not added
+        #Header already exists
+        return pdb_file, False  #header was not added
 
 def create_own_annotation_files_for_dir(chainsaw_output_dir, output_directory):
-    # Ensure the output directory exists
+    
     os.makedirs(output_directory, exist_ok=True)
-
-    # Iterate through each file in the input directory
     for filename in os.listdir(chainsaw_output_dir):
         if filename.endswith(".tsv"):
-            # Construct the full path for the input file
             input_filepath = os.path.join(chainsaw_output_dir, filename)
-
-            # Call the function with the input file and the constant output directory
             format_domain_annotation_file_chainsaw_discSplit(input_filepath, output_directory)
 
 def add_header_to_pdb_dir(input_directory):
-    # Iterate through each file in the input directory
+    #Iterate through each file in the input directory
     for filename in os.listdir(input_directory):
         if filename.endswith(".pdb"):
-            # Construct the full path for the input file
             input_filepath = os.path.join(input_directory, filename)
             print(input_filepath)
-
-            # Call the function with the input file
             output_file, header_added = add_header_to_predicted_pdb(input_filepath)
 
             if header_added:
@@ -197,7 +187,7 @@ def extract_sequence_from_pdb(pdb_file):
     parser = PDB.PDBParser(QUIET=True)
     structure = parser.get_structure("protein", pdb_file)
     
-    # Extract sequence from the first chain (you may modify as needed)
+    #Extract sequence from the first chain (you may modify as needed)
     sequence = ""
     for model in structure:
         for chain in model:
@@ -219,7 +209,7 @@ def get_pdb_files_for_id_list(id_list, output_dir):
     - Nothing but saves wanted pdb files in output dir if found in the PDB.
     """
     
-    # Disable SSL certificate verification
+    #Disable SSL certificate verification
     ssl._create_default_https_context = ssl._create_unverified_context
     for pdb_id in tqdm(id_list, desc="Downloading PDB files"):
         output_file_path = os.path.join(output_dir, f"{pdb_id}.pdb")

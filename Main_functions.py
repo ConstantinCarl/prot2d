@@ -19,10 +19,7 @@ def split_pdb_chains(input_pdb_file, output_dir):
     Returns:
     list of str: The paths to the generated PDB files or the original file if only one chain is present.
     """
-    # Ensure the output directory exists
     os.makedirs(output_dir, exist_ok=True)
-    
-    # Initialize a PDB parser
     pdb_parser = PDB.PDBParser()
     structure = pdb_parser.get_structure('structure_name', input_pdb_file)
     
@@ -46,12 +43,8 @@ def build_domainpdb_from_fullpdb(pdb_file, domain_start, domain_end,domain_index
 
     parser = PDBParser()
     structure = parser.get_structure("protein", pdb_file)
-
-    #base_name = os.path.basename(pdb_file)
-    #file_id = os.path.splitext(base_name)[0]
     for model in structure:
         for chain in model:
-            # Entfernen von Residuen, die nicht zur Domäne gehören
             for residue in list(chain):
                 if residue.id[1] < domain_start or residue.id[1] > domain_end:
                     chain.detach_child(residue.id)
@@ -215,8 +208,7 @@ def calc_model_choord_average(residue_coords_array, residue_ASs):
             avg_y = total_y / count
             average_coords[residue_counter] = (str(avg_x), str(avg_y))
         else:
-            # Handle the case where there are no coordinates for the residue
-            print("ERROR!!!!!!!")
+            print("calc_model_coord_average ERROR")
     return average_coords
 
 def create_SS_polyLines(svg_plane,blocks_coords, line_color, line_width):
@@ -236,7 +228,6 @@ def visualize_ordered_elements(svg_plane,ordered_vis_elements, simple_helix, gen
         if element.type =='sheet':
             x1,y1 = element.start_res.x,element.start_res.y
             x2,y2 = element.end_res.x, element.end_res.y
-            #svg_plane.add(ssv.create_rectangle_between_2_points(float(x1),float(y1),float(x2),float(y2),'green', 80))
             svg_plane.add(create_arrow_line_between_2_points(float(x1),float(y1),float(x2),float(y2),sheet_col, 80, general_opacity))
             #add circle for ss change
             svg_plane.add(svgwrite.shapes.Circle(center=(x1,y1), r=circle_radius,fill='black', stroke='black', opacity=general_opacity))
@@ -341,7 +332,6 @@ def create_sheet_representations(ssv, svg_plane,sheet_blocks_coords):
     for block in sheet_blocks_coords:
         x1,y1 = block[0]
         x2,y2 = block[-1]
-        #svg_plane.add(ssv.create_rectangle_between_2_points(float(x1),float(y1),float(x2),float(y2),'green', 80))
         svg_plane.add(ssv.create_arrow_line_between_2_points(float(x1),float(y1),float(x2),float(y2),'green', 80))
 def create_helix_representation(ssv, svg_plane, helix_blocks_coords, simple):
      for block in helix_blocks_coords:
@@ -427,7 +417,6 @@ def get_cystein_bonds_old(residues, max_length=3):
     [cysteines.append(res) if res.amino_acid=='CYS' else None for res in residues]
     
     pairs = list(combinations(cysteines, 2))
-    #TODO: make_unique
     cysteine_bonds = []
     [cysteine_bonds.append(poss_bond) for poss_bond in pairs if poss_bond[0].atoms['SG'].get_distance_to_atom(poss_bond[1].atoms['SG']) <= max_length]
     return cysteine_bonds

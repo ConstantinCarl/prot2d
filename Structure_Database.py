@@ -1,8 +1,6 @@
 import numpy as np
 import subprocess
 import pandas as pd
-import shutil
-import os
 import importlib.resources as pkg_resources
 
 
@@ -17,7 +15,6 @@ class Structure_Database:
         self.package_data_dir_path = 'prot2d.SF_database'
         self.SCOP_SF_db_info_tsv = self.load_package_file(self.package_data_dir_path,'db_info.tsv') #SCOP SF info tsv
         self.foldseek_SCOP_db= self.load_package_file(self.package_data_dir_path+'.foldseek_db','db') #SCOP SF database dir
-        #self.tmp_foldseek_db = self.load_package_file(self.package_data_dir_path+'.tmp_db','db')
         
     def load_package_file(self,package_data_dir,filename):
         with pkg_resources.path(package_data_dir,filename) as path:
@@ -84,7 +81,6 @@ class Structure_Database:
             print(f"query-aln: {qaln}")
             taln= matched_row['taln']
             print(f"target-aln: {taln}")
-            #print(taln.count('-'))
             print("### foldseek finished ###")
 
             new_lddtfull = []
@@ -93,10 +89,10 @@ class Structure_Database:
             len(taln.replace('-',''))
             for q_char, t_char in zip(qaln, taln):
                 if t_char == '-':
-                    # additional residue in input protein
+                    #additional residue in input protein
                     new_lddtfull.append(0)
                 elif q_char != '-' and t_char != '-':
-                    # alignment residue with existing lddt
+                    #alignment residue with existing lddt
                     new_lddtfull.append(lddtfull[lddt_index])
                     lddt_index += 1
 
@@ -129,8 +125,6 @@ class Structure_Database:
     def initial_and_fixed_Sf_rot_region(self,input_pdb,drop_family_prob,fixed_sf):
         sf,prob,u,t,fixed_rot,aligned_region,lddtfull = self.get_matching_SF_U_T_fixed_region(input_pdb,drop_family_prob,fixed_sf)
         if sf == None:
-            #destination_file = os.path.join("temp/failed", os.path.basename(input_pdb))
-            #shutil.copy(input_pdb, destination_file)
             return None,None,None,None,None
         U_inv,T_inv = invert_UT(u,t)
 
@@ -235,7 +229,6 @@ def invert_UT (U,T):
     U_inv = np.transpose(U)
     T_inv = -T
     return U_inv,T_inv
-#rot = transform_pymol_out_to_UT("")
-#set_manual_SF_rotation(3000545, rot[0])
+
 
 

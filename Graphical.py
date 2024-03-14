@@ -3,17 +3,14 @@ import math
 
 def create_arrow_V1(x1,y1,x2,y2, arrow_color="blue", line_width=20):
     dwg = svgwrite.Drawing(profile='full', size=("100%", "100%"))
-    # Calculate the angle for the arrow based on the line coords
+    #angle for the arrow based on the line coords
     angle = math.atan2(y2 - y1, x2 - x1)
-    #Define the marker
     marker = dwg.marker(insert=(1, 2.5), size=(4, 4))
     marker.add(dwg.polygon(points=[(0, 1), (1,2),(1,3), (0, 4)], fill=arrow_color, stroke_width=0.1, stroke="black"))
     
-    #Set the marker's orientation to the calculated angle in degrees
+    #marker's orientation to the calculated angle in degrees
     marker['orient'] = "{}deg".format(math.degrees(angle))
-    #Add the marker to the defs section of the drawing
     dwg.defs.add(marker)
-    #Create the line with the orientedmarker at the end
     line = dwg.add(dwg.polyline(
         [(x1, y1), (x2, y2)],
         stroke=arrow_color, fill='none', stroke_width=line_width))
@@ -34,12 +31,12 @@ def create_rectangle_between_2_points(x1,y1,x2,y2,color,thickness ):
     normalized_orthogonal_dx,normalized_orthogonal_dy = get_normalized_orthogonal_vector(dx,dy)
     #normalized_dx,normalized_dy = get_normalized_vector(dx,dy)
 
-    # Calculate the four vertices of the rectangle
+    #four vertices of the rectangle
     x1a, y1a = x1 + normalized_orthogonal_dx * thickness / 2, y1 + normalized_orthogonal_dy * thickness / 2
     x1b, y1b = x1 - normalized_orthogonal_dx * thickness / 2, y1 - normalized_orthogonal_dy * thickness / 2
     x2a, y2a = x2 + normalized_orthogonal_dx * thickness / 2, y2 + normalized_orthogonal_dy * thickness / 2
     x2b, y2b = x2 - normalized_orthogonal_dx * thickness / 2, y2 - normalized_orthogonal_dy * thickness / 2
-    # Create a polyline with the calculated vertices
+    #polyline with the calculated vertices
     points = [(x1a, y1a), (x1b, y1b), (x2b, y2b), (x2a, y2a),(x1a, y1a)]
     polygon = dwg.polygon(points, fill=color, stroke="black")
     dwg.add(polygon)
@@ -83,13 +80,11 @@ def create_helix_between(x1,y1,x2,y2,color,thickness ):
     end_element_coords = end_element_start[0],end_element_start[1],end_element_start[0] + (normalized_dx*rect_witdh),end_element_start[1] + (normalized_dy*rect_witdh)
     dwg.add(dwg.polygon([(end_element_coords[0],end_element_coords[1]),(end_element_coords[2],end_element_coords[3]),(x2,y2)], fill=color, stroke="black"))
     
-    #TODO: handle case: remaining length from beginning smaller than module --> spezial symbol
-
     return dwg
 
 def create_helix_start_element(x1,y1,x2,y2,color,thickness,rect_witdh):
     dx = x2 - x1
-    dy = y2 - y1 # calc the euclidian distance between the two points for normalization
+    dy = y2 - y1 #euclidian distance between the two points for normalization
     normalized_orthogonal_dx,normalized_orthogonal_dy = get_normalized_orthogonal_vector(dx,dy)
     normalized_dx,normalized_dy = get_normalized_vector(dx,dy)
     xr1,yr1 = x1 - (normalized_orthogonal_dx*thickness/2), y1 - (normalized_orthogonal_dy*thickness/2)
@@ -102,7 +97,7 @@ def create_helix_start_element(x1,y1,x2,y2,color,thickness,rect_witdh):
 def create_helix_module(x1,y1,x2,y2, color, thickness, rect_witdh):
     dwg = svgwrite.Drawing(profile='full', size=("100%", "100%"))
     dx = x2 - x1
-    dy = y2 - y1 # calc the euclidian distance between the two points for normalization
+    dy = y2 - y1 #euclidian distance between the two points for normalization
     normalized_orthogonal_dx,normalized_orthogonal_dy = get_normalized_orthogonal_vector(dx,dy)
     normalized_dx,normalized_dy = get_normalized_vector(dx,dy)
     
@@ -129,11 +124,6 @@ def create_simple_helix_line(x1,y1,x2,y2, color,thickness,rect_widht, cross_widt
     points = get_line_points(x1,y1,x2,y2,thickness,rect_widht,cross_width, 5)
     down_line =  dwg.polyline(points,stroke='black', fill=color, opacity=opacity)
     dwg.add(down_line)
-
-    #middle part:
-    
-    
-    #dwg.add(line)
     return dwg
 def get_line_points(x1,y1,x2,y2,thickness,rect_widht, cross_width, min_ending_line):
     if x1==x2 and y1==y2:
@@ -224,17 +214,17 @@ def closest_point_on_line(point, line):
     x, y = point
     x1, y1 = line[0]
     x2, y2 = line[1]
-    # Calculate the direction vector of the line
+    #direction vector of the line
     dx = x2 - x1
     dy = y2 - y1
-    # Calculate the squared length of the line segment
+    #squared length of the line segment
     line_length_squared = dx**2 + dy**2
-    # Calculate the vector from the starting point of the line to the given point
+    #vector from the starting point of the line to the given point
     delta_x = x - x1
     delta_y = y - y1
-    # Calculate the dot product of the line vector and the vector to the point
+    #dot product of the line vector and the vector to the point
     dot_product = (delta_x * dx + delta_y * dy) / line_length_squared
-    # Calculate the coordinates of the closest point on the line
+    #coordinates of the closest point on the line
     #point has to be on line segment
     t = max(0, min(1, dot_product))
     closest_x = x1 + t * dx

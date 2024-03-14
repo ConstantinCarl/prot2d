@@ -141,9 +141,9 @@ def create_2DSVG_from_pdb(pdb_file:str, result_dir:str, tmp_dir:str, family_vis:
     
     Args:\n\n
 
-    - pdb_file (str): Path to pdb file the visualisation file is generated on.\n
-    - result_dir (str): Path to dir, where the output file is saved (file name is automatically set based on input file name).\n
-    - tmp_dir (str): Path to dir, where temporary files needed for analyis (e.g. foldseek) and visualisations are saved.\n
+    - pdb_file (str): Path to pdb file the visualisation file is generated on. (Required)\n
+    - result_dir (str): Path to dir, where the output file is saved (file name is automatically set based on input file name). (Required)\n
+    - tmp_dir (str): Path to dir, where temporary files needed for analyis (e.g. foldseek) and visualisations are saved. (Required)\n 
     
     - family_vis (bool): If True, enables family-wise visualization, uses SCOP SF database with calculated representatives. Default is True.\n
     - fam_aligned_splitting (bool): If True, the protein is split into SF-aligned (is rotated based on this segment) and not-aligned parts. THey are connected with a dashed line. Default is True.\n

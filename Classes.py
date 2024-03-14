@@ -12,8 +12,6 @@ import matplotlib.colors as mcolors
 from scipy.spatial import ConvexHull
 from scipy.interpolate import splprep, splev
 import copy
-import xml.etree.ElementTree as ET
-
 from .Graphical import*
 
 class cross_class_functions():
@@ -47,7 +45,6 @@ class cross_class_functions():
         return [helix_num/len(residue_list),sheet_num/len(residue_list),coil_num/len(residue_list)]
 
     def get_DSSP_SS(prot_structure, pdb_file):
-        #Create a DSSP object to run DSSP and calculate secondary prot_structure
         dssp = DSSP(prot_structure[0], pdb_file)
         #Access secondary prot_structure information
         res_ss = {}
@@ -68,7 +65,6 @@ class cross_class_functions():
         return three_type_ss_string
 
     def get_ss_blocks(residue_ss, residues):
-        # numbers from SSDRAW paper
         ss_string = cross_class_functions.simplify_DSSP_output(''.join(residue_ss.values()))
         print("SS_String:"+ss_string)
         # find blcoks of at least 4 consecutive Hs
@@ -326,7 +322,6 @@ class Domain:
     
     def add_domain_text(self,svg_plane):
         ss_percentages = cross_class_functions.calc_ss_percentages(self.residue_list)
-        #info text
         middle_point= self.get_avg_point()
         text = svgwrite.text.Text('helix: '+str(round(ss_percentages[0],2))+', sheet: '+str(round(ss_percentages[1],2))+', coil: '+str(round(ss_percentages[2],2)))
         text.update({'x':str(middle_point[0]),'y':str(middle_point[1]),'font-size': 40})
@@ -687,8 +682,7 @@ class Protein:
         smoothed_coords = list(zip(new_points[0], new_points[1]))
         #add to svg
         svg_plane.add(svgwrite.shapes.Polyline(points=smoothed_coords,stroke='black',stroke_width=10,fill=color,opacity=opacity))
-        
-        
+          
     def add_sf_info(self,svg_plane):
         points = np.array(self.get_all_coords())
         max_y = np.max(points[:, 1])

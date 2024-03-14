@@ -4,6 +4,16 @@
 Prot2d is a tool for 2D protein visualization aimed at improving the comparability of protein structures through standardized 2D visualizations. Prot2d focuses on creating highly comparable representations for same-family proteins.
 
 
+# Table of Contents
+- [Getting Started](#getting-started)
+- [First Experiences with Google Colab](#first-experiences-with-google-colab)
+- [Documentation](#documentation)
+- [Data](#data)
+- [Example Visualizations](#example-visualizations)
+- [Domain Annotation File Format](#domain-annotation-file-format)
+- [Runtime for Protein Sizes](#runtime-for-protein-sizes)
+- [Reference](#reference)
+
 # Getting Started
 
 prot2d needs python version: python= ">=3.10,<3.13"

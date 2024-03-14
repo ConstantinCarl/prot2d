@@ -36,7 +36,7 @@ Instructions for downloading dssp can be found here:
 
 # First experiences with Google Colab
 
-For users to get to know prot2d we've prepared a Google Colab notebook. This allows you to execute different prot2d's functionality on example structure and see the results without needing to set up the project locally.
+For users to get to know prot2d we've prepared a Google Colab notebook with a quick tutorial through the major functions/possibilities of prot2d. Therefore the exmample protein 1kt1 is used and visualized in different ways. This allows for basic understanding of the functionalities:
 
 - [Google Colab tutorial](https://colab.research.google.com/drive/17u0twE81kYYspNFsdXUHrCyP33hj0dO6?usp=sharing)
 
@@ -44,7 +44,7 @@ Instructions in the Colab help with the first hands-on.
 
 For direct usage of prot2d including all paramters the following Collab provides functionalitys for using prot2d withput locally downloading anything.
 Users can upload theri own proteins to the Collab and visualize them as wanted.
-The runtime of the Collab is way longer than local usage. Therefore we dont advise using it for big amounts of data.
+The runtime of the Collab is way longer than local usage. Therefore we dont advise using it for big amounts of data:
 
 - [Google Colab usage](https://colab.research.google.com/drive/1pJHMagKgpTJ1cfBHkBSh2hMlkzQk263d?usp=sharing)
 

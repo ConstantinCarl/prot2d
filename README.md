@@ -86,9 +86,8 @@ The domain annotation is needed in the following format to be procceced by prot2
 ![image](https://github.com/ConstantinCarl/prot2d/assets/156075124/54dd63d9-933f-4358-8eae-8aa838008de5)
 
 # Runtime for protein sizes
-The runtimes are measured on a local lightweight device.
 <img width="427" alt="image" src="https://github.com/ConstantinCarl/prot2d/assets/156075124/ff033992-3339-43ab-a7d4-dd71a26dddc4">
-
+The runtimes are measured on a local lightweight device.<br>
 
 # Reference
 In the following document one can find more information on the tools methodogy, result analysis and refereces of the shown proteins and used software.
